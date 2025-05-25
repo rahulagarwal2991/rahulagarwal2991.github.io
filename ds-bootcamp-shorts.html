@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Bootcamp - Master Coding Interviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .shorts-container {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4ecca3, #2a9d8f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(78,204,163,0.3); }
+            50% { text-shadow: 0 0 30px rgba(78,204,163,0.5); }
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(78,204,163,0.3);
+        }
+
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #4ecca3;
+            text-shadow: 0 0 10px rgba(78,204,163,0.3);
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #4ecca3, #2a9d8f);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(78,204,163,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78,204,163,0.4);
+        }
+
+        .floating-code {
+            position: absolute;
+            color: rgba(78,204,163,0.1);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .highlight {
+            color: #4ecca3;
+            font-weight: 600;
+        }
+
+        .lead {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .price-tag {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="shorts-container">
+        <!-- Floating Code Elements -->
+        <div class="floating-code" style="top: 10%; left: 10%">while(success == false) { keepLearning(); }</div>
+        <div class="floating-code" style="top: 30%; right: 15%">class Future { constructor() { this.skills = 'DSA'; } }</div>
+        <div class="floating-code" style="bottom: 20%; left: 20%">if(dream) { work.hard(); }</div>
+
+        <div class="content animate__animated animate__fadeIn">
+            <h1 class="title">DSA Masterclass in 2 Hours! 🚀</h1>
+            <p class="lead">Quick & Effective Learning</p>
+            <p class="lead mb-4">Live on <span class="highlight">May 1st, 2025</span></p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="emoji">⏱️</div>
+                    <div>2-Hour Session</div>
+                </div>
+                <div class="feature-card">
+                    <div class="emoji">🎯</div>
+                    <div>Core Concepts</div>
+                </div>
+                <div class="feature-card">
+                    <div class="emoji">💡</div>
+                    <div>Problem Solving</div>
+                </div>
+                <div class="feature-card">
+                    <div class="emoji">📝</div>
+                    <div>Live Examples</div>
+                </div>
+            </div>
+
+            <div class="price-tag">₹99 Only!</div>
+            <p class="lead">Limited Time Offer 🔥</p>
+
+            <button class="cta-button">
+                Join 5000+ Success Stories! 🚀
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Add matrix rain effect
+        const canvas = document.createElement('canvas');
+        canvas.classList.add('matrix-bg');
+        document.querySelector('.shorts-container').appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const charArray = chars.split('');
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for(let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#4ecca3';
+            ctx.font = fontSize + 'px monospace';
+
+            for(let i = 0; i < drops.length; i++) {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
+</html> 
